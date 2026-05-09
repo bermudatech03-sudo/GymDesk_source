@@ -80,7 +80,7 @@ export default function Settings() {
           <div style={{display:"flex",alignItems:"center",gap:16,marginBottom:20}}>
             <div style={{width:56,height:56,borderRadius:"50%",background:"linear-gradient(135deg,var(--accent),var(--accent2))",
               display:"flex",alignItems:"center",justifyContent:"center",
-              fontFamily:"var(--font-display)",fontSize:24,fontWeight:800,color:"#08080a"}}>
+              fontFamily:"var(--font-display)",fontSize:24,fontWeight:800,color:"#fff"}}>
               {user?.full_name?.[0]||user?.username?.[0]||"A"}
             </div>
             <div>
@@ -165,7 +165,7 @@ export default function Settings() {
                       position: "absolute", top: 3,
                       left: isOn ? 23 : 3,
                       width: 18, height: 18, borderRadius: "50%",
-                      background: isOn ? "#08080a" : "var(--text3)",
+                      background: isOn ? "#fff" : "var(--surface3)",
                       transition: "left 0.2s",
                       display: "block",
                     }} />

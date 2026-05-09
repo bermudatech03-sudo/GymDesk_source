@@ -611,18 +611,18 @@ export default function Finances() {
           ) : (
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={summary?.monthly_trend || []} barGap={3} barSize={10}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-                <XAxis dataKey="month" tick={{ fill: "#52525e", fontSize: 11 }}
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.08)" />
+                <XAxis dataKey="month" tick={{ fill: "#3E3428", fontSize: 11 }}
                   axisLine={false} tickLine={false} />
-                <YAxis tick={{ fill: "#52525e", fontSize: 11 }}
+                <YAxis tick={{ fill: "#3E3428", fontSize: 11 }}
                   axisLine={false} tickLine={false}
                   tickFormatter={v => `₹${v / 1000}k`} />
                 <Tooltip content={customTooltip} />
                 <Legend iconType="circle" iconSize={8}
                   wrapperStyle={{ fontSize: 12, color: "var(--text2)" }} />
-                <Bar dataKey="income" fill="#a8ff57" name="Income" radius={[3, 3, 0, 0]} />
-                <Bar dataKey="expense" fill="#ff5b5b" name="Expense" radius={[3, 3, 0, 0]} />
-                <Bar dataKey="savings" fill="#2dffc3" name="Savings" radius={[3, 3, 0, 0]} />
+                <Bar dataKey="income" fill="#697254" name="Income" radius={[3, 3, 0, 0]} />
+                <Bar dataKey="expense" fill="#B04040" name="Expense" radius={[3, 3, 0, 0]} />
+                <Bar dataKey="savings" fill="#4E7C60" name="Savings" radius={[3, 3, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           )}
@@ -856,9 +856,9 @@ export default function Finances() {
                       <td>
                         <button className="btn btn-sm" style={{
                           fontSize: 11,
-                          background: item.price ? "rgba(168,255,87,.1)" : "var(--surface2)",
+                          background: item.price ? "rgba(105,114,84,.10)" : "var(--surface2)",
                           color: item.price ? "var(--accent)" : "var(--text3)",
-                          border: `1px solid ${item.price ? "rgba(168,255,87,.3)" : "var(--border)"}`,
+                          border: `1px solid ${item.price ? "rgba(105,114,84,.28)" : "var(--border)"}`,
                           cursor: item.price ? "pointer" : "not-allowed",
                           minWidth: 70,
                         }}

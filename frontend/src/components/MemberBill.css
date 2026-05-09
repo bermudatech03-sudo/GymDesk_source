@@ -45,9 +45,9 @@
 .bill-gstin-pill {
   display: inline-block;
   margin-top: 8px;
-  background: rgba(168,255,87,.15);
-  color: #a8ff57;
-  border: 1px solid rgba(168,255,87,.3);
+  background: rgba(168,188,136,.18);
+  color: #A8BC88;
+  border: 1px solid rgba(168,188,136,.35);
   border-radius: 100px;
   padding: 3px 14px;
   font-size: 11px;
@@ -59,7 +59,7 @@
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 3px;
-  color: #a8ff57;
+  color: #A8BC88;
 }
 
 /* Meta row */

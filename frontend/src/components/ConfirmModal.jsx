@@ -37,7 +37,7 @@ export default function ConfirmModal({
               borderRadius: "50%",
               background: danger
                 ? "rgba(255,91,91,0.12)"
-                : "rgba(168,255,87,0.10)",
+                : "rgba(105,114,84,0.10)",
               fontSize: 24,
             }}
           >

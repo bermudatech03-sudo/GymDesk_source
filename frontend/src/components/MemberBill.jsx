@@ -24,10 +24,10 @@ const HTML_CSS = `
   .header{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;padding:28px 32px;text-align:center}
   .gym-name{font-size:22px;font-weight:800;letter-spacing:1px;margin-bottom:4px}
   .gym-sub{font-size:12px;color:rgba(255,255,255,.65);line-height:1.7}
-  .gym-gstin{display:inline-block;margin-top:8px;background:rgba(168,255,87,.15);
-    color:#a8ff57;border:1px solid rgba(168,255,87,.3);border-radius:100px;
+  .gym-gstin{display:inline-block;margin-top:8px;background:rgba(168,188,136,.18);
+    color:#A8BC88;border:1px solid rgba(168,188,136,.38);border-radius:100px;
     padding:3px 14px;font-size:11px;font-weight:700;letter-spacing:1px}
-  .doc-title{background:#a8ff57;color:#08080a;text-align:center;padding:10px;
+  .doc-title{background:#697254;color:#fff;text-align:center;padding:10px;
     font-size:13px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
   .body{padding:24px 32px}
   .section-label{font-size:10px;font-weight:800;text-transform:uppercase;
@@ -66,8 +66,8 @@ const HTML_CSS = `
   .cycle{margin-bottom:14px;border:1px solid #ddd;border-radius:8px;overflow:hidden}
   .cycle-head{background:#1a1a2e;color:#fff;padding:9px 14px;
     display:flex;justify-content:space-between;align-items:center;font-size:12px}
-  .tag-enroll{color:#a8ff57;font-weight:800;letter-spacing:.5px}
-  .tag-renew {color:#4df0ff;font-weight:800;letter-spacing:.5px}
+  .tag-enroll{color:#A8BC88;font-weight:800;letter-spacing:.5px}
+  .tag-renew {color:#8EC4B0;font-weight:800;letter-spacing:.5px}
   .cycle-inv {color:rgba(255,255,255,.5);font-family:monospace;font-size:11px;margin-left:8px}
   .cycle-plan{color:rgba(255,255,255,.7);font-size:11px}
   .ctable{width:100%;border-collapse:collapse;font-size:12px}
@@ -87,7 +87,7 @@ const HTML_CSS = `
     border-bottom:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.75)}
   .g-row:last-child{border-bottom:none;font-size:15px;font-weight:800;padding-top:10px;color:#fff}
   .g-row .val{font-family:monospace;font-weight:700}
-  .gc-paid{color:#a8ff57}.gc-bal{color:#ff8c6b}.gc-total{color:#fff}
+  .gc-paid{color:#A8BC88}.gc-bal{color:#e07050}.gc-total{color:#fff}
   .footer{text-align:center;padding:18px 32px;border-top:1px solid #eee;
     font-size:11px;color:#999;line-height:1.8;background:#fafafa}
   .footer strong{color:#555}
@@ -429,9 +429,9 @@ export default function MemberBill({ bill, onClose }) {
           <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
             <span style={{
               fontSize: 10, fontWeight: 800, letterSpacing: .8, padding: "2px 8px", borderRadius: 100,
-              background: isRen ? "rgba(77,240,255,.12)" : "rgba(168,255,87,.12)",
+              background: isRen ? "rgba(78,124,96,.12)" : "rgba(105,114,84,.12)",
               color: isRen ? "var(--teal)" : "var(--accent)",
-              border: isRen ? "1px solid rgba(77,240,255,.3)" : "1px solid rgba(168,255,87,.3)"
+              border: isRen ? "1px solid rgba(78,124,96,.30)" : "1px solid rgba(105,114,84,.28)"
             }}>
               {isRen ? "RENEWAL" : "ENROLLMENT"} #{idx + 1}
             </span>

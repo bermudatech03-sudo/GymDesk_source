@@ -618,8 +618,8 @@ function RenewModal({ member, plans, dietPlans: initialDietPlans = [], onClose, 
           {planTotal > 0 && (
             <div style={{
               display: "flex", justifyContent: "space-between", alignItems: "center",
-              background: balance > 0 ? "rgba(255,184,48,.1)" : "rgba(168,255,87,.08)",
-              border: `1px solid ${balance > 0 ? "rgba(255,184,48,.3)" : "rgba(168,255,87,.2)"}`,
+              background: balance > 0 ? "rgba(255,184,48,.1)" : "rgba(105,114,84,.08)",
+              border: `1px solid ${balance > 0 ? "rgba(255,184,48,.3)" : "rgba(105,114,84,.20)"}`,
               borderRadius: 8, padding: "10px 14px", fontSize: 13
             }}>
               <span style={{ color: "var(--text2)" }}>
@@ -837,9 +837,9 @@ function PaymentHistoryModal({ member, onClose, onRefresh, onBill, gymInfo = {} 
                       <span style={{
                         fontSize: 10, fontWeight: 800, letterSpacing: .8, padding: "2px 8px",
                         borderRadius: 100,
-                        background: (p.invoice_number || "").includes("-R") ? "rgba(77,240,255,.12)" : "rgba(168,255,87,.12)",
+                        background: (p.invoice_number || "").includes("-R") ? "rgba(78,124,96,.12)" : "rgba(105,114,84,.12)",
                         color: (p.invoice_number || "").includes("-R") ? "var(--teal)" : "var(--accent)",
-                        border: (p.invoice_number || "").includes("-R") ? "1px solid rgba(77,240,255,.3)" : "1px solid rgba(168,255,87,.3)"
+                        border: (p.invoice_number || "").includes("-R") ? "1px solid rgba(78,124,96,.28)" : "1px solid rgba(105,114,84,.28)"
                       }}>
                         {(p.invoice_number || "").includes("-R") ? "RENEWAL" : "ENROLLMENT"}
                       </span>
@@ -999,7 +999,7 @@ function ViewMemberModal({ member: m, onClose, onEdit, onRenew, onPayments, onCa
         {/* Actions */}
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           <button className="btn btn-sm btn-secondary" onClick={onEdit}>Edit</button>
-          <button className="btn btn-sm" style={{ background: "rgba(45,255,195,.12)", color: "var(--teal)" }}
+          <button className="btn btn-sm" style={{ background: "rgba(78,124,96,.12)", color: "var(--teal)" }}
             disabled={m.days_until_expiry != null && m.days_until_expiry > 0} onClick={onRenew}>Renew</button>
           <button className="btn btn-sm" style={{ background: "rgba(77,166,255,.12)", color: "var(--info)" }} onClick={onPayments}>
             Payments{(m.balance_due || 0) > 0 ? " ⚠" : ""}
@@ -1127,8 +1127,8 @@ function DietUpgradeModal({ memberId, memberRenewalDate, onClose, onBill }) {
           {dietWithGst > 0 && (
             <div style={{
               display: "flex", justifyContent: "space-between", alignItems: "center",
-              background: balance > 0 ? "rgba(255,184,48,.1)" : "rgba(168,255,87,.08)",
-              border: `1px solid ${balance > 0 ? "rgba(255,184,48,.3)" : "rgba(168,255,87,.2)"}`,
+              background: balance > 0 ? "rgba(255,184,48,.1)" : "rgba(105,114,84,.08)",
+              border: `1px solid ${balance > 0 ? "rgba(255,184,48,.3)" : "rgba(105,114,84,.20)"}`,
               borderRadius: 8, padding: "10px 14px", fontSize: 13
             }}>
               <span style={{ color: "var(--text2)" }}>{balance > 0 ? "⚠ Balance remaining" : "✓ Fully paid"}</span>
@@ -1417,7 +1417,7 @@ export default function Members() {
             </div>
             <button
               className="btn btn-sm"
-              style={{ background: "var(--accent-dim)", color: "var(--accent)", border: "1px solid rgba(168,255,87,.3)", whiteSpace: "nowrap" }}
+              style={{ background: "var(--accent-dim)", color: "var(--accent)", border: "1px solid rgba(105,114,84,.28)", whiteSpace: "nowrap" }}
               onClick={() => setViewMember(m)}>
               View Member
             </button>
@@ -1508,7 +1508,7 @@ export default function Members() {
                         <button className="btn btn-sm btn-secondary"
                           onClick={() => { setSelected(m); setModal("edit"); }}>Edit</button>
                         <button className="btn btn-sm"
-                          style={{ background: "rgba(45,255,195,.12)", color: "var(--teal)" }}
+                          style={{ background: "rgba(78,124,96,.12)", color: "var(--teal)" }}
                           disabled={m.days_until_expiry != null && m.days_until_expiry > 0}
                           onClick={() => { setSelected(m); setModal("renew"); }}>Renew</button>
                         <button className="btn btn-sm"

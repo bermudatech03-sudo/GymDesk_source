@@ -222,7 +222,7 @@ export default function Plans() {
                     style={{
                       background: p.is_active
                         ? "rgba(255,184,48,.12)"
-                        : "rgba(168,255,87,.12)",
+                        : "rgba(105,114,84,.12)",
                       color: p.is_active ? "var(--warn)" : "var(--accent)",
                     }}
                     onClick={() => toggleActive(p)}

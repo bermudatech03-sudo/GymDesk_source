@@ -6,7 +6,7 @@ import {
 } from "recharts";
 import "./Dashboard.css";
 
-const COLORS = ["#a8ff57", "#2dffc3", "#4da6ff", "#ffb830", "#ff5b5b", "#b48fff"];
+const COLORS = ["#697254", "#4E7C60", "#8A9E70", "#C1B4A4", "#B04040", "#A08060"];
 
 function StatCard({ icon, label, value, sub, color }) {
   return (
@@ -64,17 +64,17 @@ export default function Dashboard() {
     <div className="dashboard">
       {/* ── Stats row ── */}
       <div className="grid-4" style={{ marginBottom: 24 }}>
-        <StatCard icon="◈" label="Total Members" value={memberStats?.total ?? 0} sub={`${memberStats?.new_this_month ?? 0} new this month`} color="#a8ff57" />
-        <StatCard icon="✓" label="Active Members" value={memberStats?.active ?? 0} sub={`${memberStats?.expiring_7 ?? 0} expiring in 7 days`} color="#2dffc3" />
-        <StatCard icon="◉" label="Staff Active" value={staffStats?.active ?? 0} sub={`${staffStats?.on_leave ?? 0} on leave`} color="#4da6ff" />
-        <StatCard icon="◆" label="Equipment Items" value={eqStats?.total ?? 0} sub={`${eqStats?.due_maintenance ?? 0} need service`} color="#ffb830" />
+        <StatCard icon="◈" label="Total Members" value={memberStats?.total ?? 0} sub={`${memberStats?.new_this_month ?? 0} new this month`} color="#697254" />
+        <StatCard icon="✓" label="Active Members" value={memberStats?.active ?? 0} sub={`${memberStats?.expiring_7 ?? 0} expiring in 7 days`} color="#4E7C60" />
+        <StatCard icon="◉" label="Staff Active" value={staffStats?.active ?? 0} sub={`${staffStats?.on_leave ?? 0} on leave`} color="#2A6498" />
+        <StatCard icon="◆" label="Equipment Items" value={eqStats?.total ?? 0} sub={`${eqStats?.due_maintenance ?? 0} need service`} color="#9A6800" />
       </div>
 
       {/* ── Finance stats ── */}
       <div className="grid-3" style={{ marginBottom: 24 }}>
-        <StatCard icon="₹" label="Monthly Income" value={`₹${Number(finance?.total_income ?? 0).toLocaleString("en-IN")}`} color="#a8ff57" />
-        <StatCard icon="↑" label="Monthly Expense" value={`₹${Number(finance?.total_expense ?? 0).toLocaleString("en-IN")}`} color="#ff5b5b" />
-        <StatCard icon="★" label="Net Savings" value={`₹${Number(finance?.net_savings ?? 0).toLocaleString("en-IN")}`} color="#2dffc3" />
+        <StatCard icon="₹" label="Monthly Income" value={`₹${Number(finance?.total_income ?? 0).toLocaleString("en-IN")}`} color="#697254" />
+        <StatCard icon="↑" label="Monthly Expense" value={`₹${Number(finance?.total_expense ?? 0).toLocaleString("en-IN")}`} color="#B04040" />
+        <StatCard icon="★" label="Net Savings" value={`₹${Number(finance?.net_savings ?? 0).toLocaleString("en-IN")}`} color="#4E7C60" />
       </div>
 
       {/* ── Charts row ── */}
@@ -84,12 +84,12 @@ export default function Dashboard() {
           <div className="dash-chart-title">Income vs Expense (12 months)</div>
           <ResponsiveContainer width="100%" height={240}>
             <BarChart data={finance?.monthly_trend ?? []} barGap={4} barSize={10}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-              <XAxis dataKey="month" tick={{ fill: "#52525e", fontSize: 11 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: "#52525e", fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={v => `₹${v / 1000}k`} />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.08)" />
+              <XAxis dataKey="month" tick={{ fill: "#3E3428", fontSize: 11 }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fill: "#3E3428", fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={v => `₹${v / 1000}k`} />
               <Tooltip content={customTooltip} />
-              <Bar dataKey="income" fill="#a8ff57" name="Income" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="expense" fill="#ff5b5b" name="Expense" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="income" fill="#697254" name="Income" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="expense" fill="#B04040" name="Expense" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -108,10 +108,10 @@ export default function Dashboard() {
                 cx="50%" cy="50%" innerRadius={60} outerRadius={90}
                 paddingAngle={3} dataKey="value"
               >
-                {["#a8ff57", "#ff5b5b", "#52525e"].map((c, i) => <Cell key={i} fill={c} />)}
+                {["#697254", "#B04040", "#C1B4A4"].map((c, i) => <Cell key={i} fill={c} />)}
               </Pie>
               <Tooltip formatter={(v, n) => [v, n]} />
-              <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: "12px", color: "#9090a0" }} />
+              <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: "12px", color: "#3E3428" }} />
             </PieChart>
           </ResponsiveContainer>
         </div>
@@ -121,11 +121,11 @@ export default function Dashboard() {
           <div className="dash-chart-title">Savings Trend</div>
           <ResponsiveContainer width="100%" height={240}>
             <LineChart data={finance?.monthly_trend ?? []}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-              <XAxis dataKey="month" tick={{ fill: "#52525e", fontSize: 11 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: "#52525e", fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={v => `₹${v / 1000}k`} />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.08)" />
+              <XAxis dataKey="month" tick={{ fill: "#3E3428", fontSize: 11 }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fill: "#3E3428", fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={v => `₹${v / 1000}k`} />
               <Tooltip content={customTooltip} />
-              <Line dataKey="savings" stroke="#2dffc3" strokeWidth={2.5} dot={false} name="Savings" />
+              <Line dataKey="savings" stroke="#4E7C60" strokeWidth={2.5} dot={false} name="Savings" />
             </LineChart>
           </ResponsiveContainer>
         </div>
